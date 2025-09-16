@@ -1,80 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
-</head>
+    <?php include "component/billboard.php"; ?>
 
-
-
-<body>
-
-    <nav>
-        <div class="nav-brand">
-            <h2>LautanLembar</h2> 
-        </div>
-        <div class="toolbar">
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" style="color: white; font-size: 1.3em;">
-                    Kategori 
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-            <div class="search">
-                <input type="search" name="" id="">
-            </div>
-            <div class="whislist">
-                <span class="mdi--cart-outline"></span>
-            </div>
-        </div>
-        <div class="registration">
-            <button type="button">Masuk</button>
-            <button type="button">Daftar</button>
-        </div>
-    </nav>
-    
-    <div class="container my-5">
-        <div class="image-grid">
-            <div class="main-image">
-                <img src="../img/iklan3.jpg" alt="Coca Cola Billboard" id="mainImg">
-                <div class="image-overlay">
-                    <span>📸 Klik untuk memperbesar</span>
-                </div>
-            </div>
-            <div class="side-images">
-                <div class="side-image">
-                    <img src="../img/iklan.jpg" alt="Ocean Waves" id="sideImg1">
-                    <div class="image-overlay">
-                        <span>🌊 Ocean</span>
-                    </div>
-                </div>
-                <div class="side-image">
-                    <img src="../img/iklan2.jpg" alt="Portrait" id="sideImg2">
-                    <div class="image-overlay">
-                        <span>👥 Portrait</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="catalog my-5">
+<section class="content-home">
+        <div class="catalog my-5">
         <div class="sub-title">
             <h1>Buku Terlaris</h1>
         </div>
         <div class="catalog-scroll" id="catalog-scroll">
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -93,7 +28,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -112,7 +47,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -131,7 +66,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -150,7 +85,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -169,7 +104,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -188,7 +123,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -207,7 +142,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -233,7 +168,7 @@
         <div class="catalog-scroll" id="catalog-scroll">
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -252,7 +187,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -271,7 +206,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -290,7 +225,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -309,7 +244,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -328,7 +263,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -347,7 +282,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -366,7 +301,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -392,7 +327,7 @@
         <div class="catalog-scroll" id="catalog-scroll">
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -411,7 +346,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -430,7 +365,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -449,7 +384,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -468,7 +403,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -487,7 +422,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -506,7 +441,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -525,7 +460,7 @@
             </div>
             <div class="card-product">
                 <div class="cover">
-                    <img src="../img/SMASM.jpg" alt="">
+                    <img src="img/SMASM.jpg" alt="">
                 </div>
                 <div class="desc">
                     <div class="writer">
@@ -544,89 +479,24 @@
             </div>
         </div>
     </div>
+    </section>
 
-    <div class="container-penerbit my-5">
+    <section class="container-penerbit my-5">
         <div class="sub-title">
             <h1>Penerbit</h1>
         </div>
         <div class="wrap-penerbit">
             <div class="box">
-                <img src="../img/GPU.png" alt="">
+                <img src="img/GPU.png" alt="">
             </div>
             <div class="box">
-                <img src="../img/GPU.png" alt="">
+                <img src="img/GPU.png" alt="">
             </div>
             <div class="box">
-                <img src="../img/GPU.png" alt="">
+                <img src="img/GPU.png" alt="">
             </div>
             <div class="box">
-                <img src="../img/GPU.png" alt="">
+                <img src="img/GPU.png" alt="">
             </div>
         </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <!-- Brand Section -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h3 class="footer-brand">Jelajah Banyuwangi</h3>
-                    <p class="footer-tagline">Jelajahi keindahan alam dan budaya Banyuwangi yang memukau. Temukan
-                        petualangan tak terlupakan di ujung timur Pulau Jawa.</p>
-                </div>
-
-                <!-- Social Media Section -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="mb-3">Ikuti Kami</h5>
-                    <div class="social-links">
-                        <a href="https://instagram.com/jelajahbanyuwangi" class="instagram" title="Instagram">
-                            <span class="mdi--instagram"></span>
-                        </a>
-                        <a href="https://tiktok.com/@jelajahbanyuwangi" class="tiktok" title="TikTok">
-                            <span class="ic--baseline-tiktok"></span>
-                        </a>
-                        <a href="https://twitter.com/jelajahbwi" class="twitter" title="Twitter">
-                            <span class="mdi--twitter"></span>
-                        </a>
-                    </div>
-                    <p class="small text-muted">Dapatkan update terbaru tentang destinasi wisata dan tips perjalanan</p>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <h5 class="mb-3">Kontak Kami</h5>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Jl. Raya Situbondo KM 13, Banyuwangi, Jawa Timur</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+62333421234">+62 333 421 234</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@jelajahbanyuwangi.com">info@jelajahbanyuwangi.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-globe"></i>
-                            <a href="https://jelajahbanyuwangi.com">www.jelajahbanyuwangi.com</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>&copy; 2025 Jelajah Banyuwangi. Dibuat dengan <span class="heart">♥</span> untuk para petualang.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"
-        integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../css/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+    </section>
