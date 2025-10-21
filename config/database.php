@@ -1,6 +1,7 @@
 <?php
 class Database{
     private $connection;
+    
     public function getConnection(){
         $this->connection = null;
         try{
