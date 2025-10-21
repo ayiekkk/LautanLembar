@@ -18,7 +18,6 @@
             <h1>Buku Terlaris</h1>
         </div>
         <div class="catalog-scroll" id="catalog-scroll">
-            <!-- <span class="solar--alt-arrow-right-line-duotone"></span> -->
             <div class="card-product">
                 <div class="cover">
                     <img src="img/SMASM.jpg" alt="">

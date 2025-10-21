@@ -6,5 +6,5 @@
         include "page/home.php";
     } elseif ($page == "catalog") {
         include "page/catalog.php";
-    }
+    } 
     ?>

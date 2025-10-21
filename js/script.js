@@ -1,5 +1,15 @@
-const scrollCatalog = document.getElementById("catalog-scroll")
+function scrollToLeft() {
+            const container = document.getElementById('scrollContainer');
+            container.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
 
-scrollCatalog.addEventListener("mouseover", function()){
-    
-};
+        function scrollToRight() {
+            const container = document.getElementById('scrollContainer');
+            container.scrollTo({
+                left: container.scrollWidth,
+                behavior: 'smooth'
+            });
+        }

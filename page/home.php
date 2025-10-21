@@ -1,12 +1,12 @@
-
-    <?php include "component/billboard.php"; ?>
+<?php include "component/billboard.php"; ?>
 
 <section class="content-home">
-        <div class="catalog my-5">
+    <div class="catalog my-5">
         <div class="sub-title">
             <h1>Buku Terlaris</h1>
         </div>
-        <div class="catalog-scroll" id="catalog-scroll">
+        <!-- <span class="ei--arrow-right"></span> -->
+        <div class="catalog-scroll" id="scrollContainer">
             <div class="card-product">
                 <div class="cover">
                     <img src="img/SMASM.jpg" alt="">
@@ -163,9 +163,9 @@
     </div>
     <div class="catalog my-5">
         <div class="sub-title">
-            <h1>Buku Terlaris</h1>
+            <h1>Rekomendasi</h1>
         </div>
-        <div class="catalog-scroll" id="catalog-scroll">
+        <div class="catalog-scroll" id="scrollContainer">
             <div class="card-product">
                 <div class="cover">
                     <img src="img/SMASM.jpg" alt="">
@@ -322,9 +322,9 @@
     </div>
     <div class="catalog my-5">
         <div class="sub-title">
-            <h1>Buku Terlaris</h1>
+            <h1>Edisi Terbaru</h1>
         </div>
-        <div class="catalog-scroll" id="catalog-scroll">
+        <div class="catalog-scroll" id="scrollContainer">
             <div class="card-product">
                 <div class="cover">
                     <img src="img/SMASM.jpg" alt="">
@@ -479,24 +479,24 @@
             </div>
         </div>
     </div>
-    </section>
+</section>
 
-    <section class="container-penerbit my-5">
-        <div class="sub-title">
-            <h1>Penerbit</h1>
+<section class="container-penerbit my-5">
+    <div class="sub-title">
+        <h1>Penerbit</h1>
+    </div>
+    <div class="wrap-penerbit">
+        <div class="box">
+            <img src="img/GPU.png" alt="">
         </div>
-        <div class="wrap-penerbit">
-            <div class="box">
-                <img src="img/GPU.png" alt="">
-            </div>
-            <div class="box">
-                <img src="img/GPU.png" alt="">
-            </div>
-            <div class="box">
-                <img src="img/GPU.png" alt="">
-            </div>
-            <div class="box">
-                <img src="img/GPU.png" alt="">
-            </div>
+        <div class="box">
+            <img src="img/GPU.png" alt="">
         </div>
-    </section>
+        <div class="box">
+            <img src="img/GPU.png" alt="">
+        </div>
+        <div class="box">
+            <img src="img/GPU.png" alt="">
+        </div>
+    </div>
+</section>
