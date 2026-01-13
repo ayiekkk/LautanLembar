@@ -7,11 +7,11 @@
     <?php include "component/nav.php"; ?>
 
     <!-- Akan Dirubah -->
-     <?php   
+    <?php
 
-       include "route/web.php";
-     
-     ?>
+    include "route/web.php";
+
+    ?>
 
     <?php include "component/footer.php"; ?>
 
