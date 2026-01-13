@@ -1,17 +1,60 @@
 <?php
 $koneksi = new mysqli("localhost", "root", "", "lautan_lembar");
 
-// --- PROSES SIMPAN DATA ---
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $id_genre   = trim($_POST['ID_genre']);
-    $nama_genre = trim($_POST['nama_genre']);
+// --- VAR UNTUK NOTIFIKASI ---
+$notifikasi = "";
 
-    if (!empty($id_genre) && !empty($nama_genre)) {
-        $koneksi->query("INSERT INTO genre (ID_genre, nama_genre) VALUES ('$id_genre', '$nama_genre')");
+// --- HAPUS DATA ---
+if (isset($_GET['hapus'])) {
+    $id = $_GET['hapus'];
+    $koneksi->query("DELETE FROM genre WHERE ID_genre = '$id'");
+    $notifikasi = "<div class='alert alert-warning text-center fade-alert'>
+        Data genre dengan ID <b>$id</b> berhasil dihapus!
+    </div>";
+}
+
+// --- AMBIL DATA UNTUK EDIT ---
+$edit_mode = false;
+$edit_id = "";
+$edit_judul = "";
+
+if (isset($_GET['edit'])) {
+    $edit_id = $_GET['edit'];
+    $data_edit = $koneksi->query("SELECT * FROM genre WHERE ID_genre = '$edit_id'");
+    if ($data_edit->num_rows > 0) {
+        $row = $data_edit->fetch_assoc();
+        $edit_mode = true;
+        $edit_judul = $row['nama_genre'];
     }
 }
 
-// --- AMBIL DATA DARI DATABASE ---
+// --- SIMPAN DATA (TAMBAH / UPDATE) ---
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $ID_genre = trim($_POST['ID_genre']);
+    $nama_genre = trim($_POST['nama_genre']);
+
+    if (!empty($ID_genre) && !empty($nama_genre)) {
+        if (isset($_POST['update'])) {
+            $old_id = $_POST['old_id'];
+            $koneksi->query("UPDATE genre SET ID_genre='$ID_genre', nama_genre='$nama_genre' WHERE ID_genre='$old_id'");
+            $notifikasi = "<div class='alert alert-info text-center fade-alert'>Data genre berhasil diperbarui!</div>";
+        } else {
+            $cek = $koneksi->query("SELECT * FROM genre WHERE ID_genre='$ID_genre'");
+            if ($cek->num_rows > 0) {
+                $notifikasi = "<div class='alert alert-danger text-center fade-alert'>
+                    ID genre <b>$ID_genre</b> sudah ada! Gunakan ID lain.
+                </div>";
+            } else {
+                $koneksi->query("INSERT INTO genre (ID_genre, nama_genre) VALUES ('$ID_genre', '$nama_genre')");
+                $notifikasi = "<div class='alert alert-success text-center fade-alert'>
+                    Data genre berhasil disimpan!
+                </div>";
+            }
+        }
+    }
+}
+
+// --- AMBIL SEMUA DATA GENRE ---
 $data_genre = $koneksi->query("SELECT * FROM genre ORDER BY ID_genre");
 ?>
 
@@ -21,37 +64,74 @@ $data_genre = $koneksi->query("SELECT * FROM genre ORDER BY ID_genre");
   <meta charset="UTF-8">
   <title>Manajemen Genre</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .fade-alert { opacity: 1; transition: opacity 1s ease-out; }
+    .fade-alert.hide { opacity: 0; }
+  </style>
+  <script>
+    function konfirmasiHapus(id) {
+      if (confirm('Yakin ingin menghapus data dengan ID ' + id + '?')) {
+        // jika file ini diakses sebagai "index.php?page=form_kategori"
+        // ubah baris di bawah ini jadi:
+        window.location = '?page=genre&hapus=' + id;
+        // window.location = '?hapus=' + id;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const alertBox = document.querySelector(".fade-alert");
+      if (alertBox) {
+        setTimeout(() => {
+          alertBox.classList.add("hide");
+          setTimeout(() => alertBox.remove(), 800);
+        }, 1500);
+      }
+    });
+  </script>
 </head>
 
 <body class="bg-light">
-  <div class="container mt-5">
-    <div class="card shadow-lg p-4 rounded-4 mb-4">
-      <h3 class="mb-4 text-center">Tambah Genre</h3>
+  <div class="container mt-4">
 
-      <form action="" method="POST">
+    <!-- Notifikasi -->
+    <?php if (!empty($notifikasi)) echo $notifikasi; ?>
+
+    <div class="card shadow-lg p-4 rounded-4 mb-4">
+      <h3 class="mb-4 text-center"><?= $edit_mode ? 'Edit Data Genre' : 'Tambah Genre' ?></h3>
+
+      <form method="POST" action="?page=genre">
         <div class="mb-3">
           <label class="form-label">ID Genre</label>
-          <input type="text" name="ID_genre" class="form-control" placeholder="Masukkan ID genre" required>
+          <input type="text" name="ID_genre" class="form-control"
+                 value="<?= $edit_mode ? htmlspecialchars($edit_id) : '' ?>"
+                 placeholder="Masukkan ID genre" required>
         </div>
 
         <div class="mb-3">
           <label class="form-label">Nama Genre</label>
-          <textarea name="nama_genre" class="form-control" rows="3" placeholder="Tuliskan nama genre"></textarea>
+          <textarea name="nama_genre" class="form-control" rows="3"
+                    placeholder="Tuliskan nama genre" required><?= $edit_mode ? htmlspecialchars($edit_judul) : '' ?></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">Simpan</button>
+        <?php if ($edit_mode): ?>
+          <input type="hidden" name="old_id" value="<?= htmlspecialchars($edit_id) ?>">
+          <button type="submit" name="update" class="btn btn-warning w-100">Update Data</button>
+          <a href="?page=genre" class="btn btn-secondary w-100 mt-2">Batal Edit</a>
+        <?php else: ?>
+          <button type="submit" class="btn btn-primary w-100">Simpan</button>
+        <?php endif; ?>
       </form>
     </div>
 
-    <!-- tabel data genre -->
     <div class="card shadow-lg p-4 rounded-4">
       <h4 class="mb-3 text-center">Daftar Genre</h4>
       <table class="table table-bordered table-hover align-middle">
         <thead class="table-dark text-center">
           <tr>
-            <th>#</th>
+            <th>No</th>
             <th>ID Genre</th>
             <th>Nama Genre</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -63,11 +143,15 @@ $data_genre = $koneksi->query("SELECT * FROM genre ORDER BY ID_genre");
                           <td class='text-center'>$no</td>
                           <td class='text-center'>{$row['ID_genre']}</td>
                           <td class='text-center'>{$row['nama_genre']}</td>
+                          <td class='text-center'>
+                            <a href='?page=genre&edit={$row['ID_genre']}' class='btn btn-warning btn-sm me-1'>Edit</a>
+                            <button class='btn btn-danger btn-sm' onclick=\"konfirmasiHapus('{$row['ID_genre']}')\">Hapus</button>
+                          </td>
                         </tr>";
                   $no++;
               }
           } else {
-              echo "<tr><td colspan='3' class='text-center text-muted'>Belum ada data genre.</td></tr>";
+              echo "<tr><td colspan='4' class='text-center text-muted'>Belum ada data genre.</td></tr>";
           }
           ?>
         </tbody>
