@@ -11,7 +11,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="index.php">Home</a></li>
                     <li><a class="dropdown-item" href="index.php?page=catalog">Shop All</a></li>
-                    <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                    <li><a class="dropdown-item" href="#">Contact Us</a></li> 
                 </ul>
             </div>
             <div class="search">
